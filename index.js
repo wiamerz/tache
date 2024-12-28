@@ -1,10 +1,10 @@
-const express = require('express');
-const taskroutes = require('./routes/taskRoutes');
+const express = require('express');    //importi la bibliothèque express
+const taskroutes = require('./routes/taskroutes');
 const mongoose = require('mongoose');
 
-const app = express();
+const app = express(); 
 
-app.use(express.json()); //li ms2ola to give the body only in the req http
+app.use(express.json()); //li ms2ola to give the body only in requêtes http
 
 // Connect to MongoDB
 mongoose.connect('mongodb://127.0.0.1:27017/task-manager').then(()=>{

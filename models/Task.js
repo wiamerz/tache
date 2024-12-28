@@ -1,13 +1,13 @@
-const mongoose = require('mongoose');
+const mongoose = require('mongoose');  //importer biblio de mongoose
 
-const taskSchema = new mongoose.Schema({   // for tajdid
+const taskSchema = new mongoose.Schema({   // scheama pour defini les data du mongodb
     title: {
         type: String,
-        required: [true, 'Title is required'],
+        required: [true, 'titre est obligatoire'],
     },
     description: {
         type: String,
-        required: [true, 'Description is required'],
+        required: [true, 'Description est obligatoire'],
     },
     completed: {
         type: Boolean,
@@ -15,4 +15,4 @@ const taskSchema = new mongoose.Schema({   // for tajdid
     }
 });
 
-module.exports = mongoose.model('Task', taskSchema);
+module.exports = mongoose.model('Task', taskSchema); //pour la connexion avec les autres fichier
