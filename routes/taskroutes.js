@@ -1,5 +1,5 @@
 const express = require('express');
-const router = express.Router();
+const router = express.Router(); 
 const Task = require('../models/Task');
 
 //creation du tâche          
@@ -8,15 +8,15 @@ router.post('/', async (req, res) => {  //async for await
         const { title, description } = req.body; // gemme the body only
         
         if (!title || !description) {
-            return res.status(400).json({ message: 'titre et description sont obligatoir' });
+            return res.status(400).json({ message: 'titre et description sont obligatoir' }); //Statut 400 : Indique une erreur de requête client
         }
         //creating the new task
         const task = new Task({ title, description });
         await task.save();   //await mean mtkmlch ta t save 
         
-        res.status(201).json(task); //nrad task l user
+        res.status(201).json(task); //nrad task l user , Statut 201 : Indique que la ressource (la tâche) a été créée.
     } catch (error) {
-        res.status(500).json({ message: 'erreur dans la creation du tâche', error: error.message });
+        res.status(500).json({ message: 'erreur dans la creation du tâche', error: error.message }); //Statut 500 : Indique une erreur serveur.
     }
 });
 

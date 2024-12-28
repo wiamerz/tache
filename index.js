@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 
 const app = express(); 
 
-app.use(express.json()); //li ms2ola to give the body only in requêtes http
+app.use(express.json()); //li ms2ola to give the body only in request http
 
 // Connect to MongoDB
 mongoose.connect('mongodb://127.0.0.1:27017/task-manager').then(()=>{
@@ -15,6 +15,6 @@ mongoose.connect('mongodb://127.0.0.1:27017/task-manager').then(()=>{
 app.use('/api/tasks', taskroutes);
 
 const PORT = 3000;
-app.listen(PORT, () => {
+app.listen(PORT, () => { 
     console.log(`Server running on port ${PORT}`);
 });
